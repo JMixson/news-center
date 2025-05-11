@@ -1,9 +1,11 @@
-import Image from 'next/image';
+import HeroSection from '@/components/HeroSection';
+import NewsGrid from '@/components/NewsGrid';
 
 export default function Home() {
   return (
     <>
-      <p>Hello</p>
+      <HeroSection />
+      <NewsGrid />
     </>
   );
 }
