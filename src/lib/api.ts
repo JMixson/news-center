@@ -1,7 +1,8 @@
 import { ArticlesResponse } from '@/types/article';
 
 const articleQueryKey = ['articles'];
-const baseUrl = 'https://newsapi.org/v2/top-headlines?country=us&pageSize=7';
+const baseUrl =
+  'https://newsapi.org/v2/top-headlines?country=us&category=science&pageSize=12';
 const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
 
 const fetchArticles = async (): Promise<ArticlesResponse> => {
