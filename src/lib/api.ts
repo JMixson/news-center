@@ -1,9 +1,8 @@
 import { ArticlesResponse } from '@/types/article';
 
 const articleQueryKey = ['articles'];
-const baseUrl =
-  'https://newsapi.org/v2/top-headlines?country=us&category=science&pageSize=12';
-const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
+const baseUrl = 'https://newsdata.io/api/1/latest?country=us&language=en';
+const apiKey = process.env.NEXT_PUBLIC_NEWS_API_TOKEN;
 
 const fetchArticles = async (): Promise<ArticlesResponse> => {
   const response = await fetch(`${baseUrl}&apikey=${apiKey}`);
