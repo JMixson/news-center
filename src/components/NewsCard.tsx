@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import { Article } from '@/types/article';
 
-function NewsCard({ index, article }: { index: number; article: Article }) {
-  const { title, urlToImage, description, publishedAt } = article;
-  const publishDate = new Date(publishedAt);
+function NewsCard({ article }: { article: Article }) {
+  const { article_id, title, image_url, description, pubDate } = article;
+  const publishDate = new Date(pubDate);
 
   return (
-    <Link href={`/article/${index}`} className="block h-full">
+    <Link href={`/article/${article_id}`} className="block h-full">
       <div className="bg-white rounded-xl shadow-sm overflow-hidden transform transition duration-300 hover:shadow-md hover:translate-y-[-5px] h-full flex flex-col">
         <div className="relative h-48 overflow-hidden flex-shrink-0">
           <img
-            src={urlToImage}
+            src={image_url}
             alt={title}
             className="w-full h-full object-cover"
           />
