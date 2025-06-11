@@ -1,16 +1,17 @@
 export type Article = {
-  source: { id: string | null; name: string };
-  author: string;
+  article_id: string;
   title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
+  link: string;
+  creator: string[] | null;
+  description: string | null;
+  source_icon: string;
+  pubDate: string;
+  image_url: string;
+  categories: string[];
 };
 
 export type ArticlesResponse = {
-  status: 'ok' | 'error';
+  status: 'success' | 'error';
   totalResults: number;
-  articles: Article[];
+  results: Article[];
 };
