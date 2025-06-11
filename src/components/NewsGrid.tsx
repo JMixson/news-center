@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 function NewsGrid() {
   const { data, isLoading, isError, error } = useQuery(articlesQueryOptions);
 
-  const articles = data?.articles;
+  const articles = data?.results;
 
   if (isLoading) {
     return (
@@ -34,8 +34,8 @@ function NewsGrid() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles && articles.length > 0 ? (
-          articles.map((article, index) => (
-            <NewsCard key={index} article={article} index={index} />
+          articles.map(article => (
+            <NewsCard key={article.article_id} article={article} />
           ))
         ) : (
           <div className="col-span-full text-center text-gray-600">
